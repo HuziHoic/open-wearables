@@ -36,6 +36,13 @@ class SeriesType(str, Enum):
     respiratory_rate = "respiratory_rate"
     sleeping_breathing_disturbances = "sleeping_breathing_disturbances"
 
+    # Blood & Respiratory - Extended
+    blood_alcohol_content = "blood_alcohol_content"
+    peripheral_perfusion_index = "peripheral_perfusion_index"
+    forced_vital_capacity = "forced_vital_capacity"
+    forced_expiratory_volume_1 = "forced_expiratory_volume_1"
+    peak_expiratory_flow_rate = "peak_expiratory_flow_rate"
+
     # =========================================================================
     # BIOMETRICS - Body Composition (IDs 40-59)
     # =========================================================================
@@ -45,6 +52,9 @@ class SeriesType(str, Enum):
     body_mass_index = "body_mass_index"
     lean_body_mass = "lean_body_mass"
     body_temperature = "body_temperature"
+
+    # Body Composition - Extended
+    waist_circumference = "waist_circumference"
 
     # =========================================================================
     # BIOMETRICS - Fitness Metrics (IDs 60-79)
@@ -96,12 +106,18 @@ class SeriesType(str, Enum):
     # ACTIVITY - Swimming Metrics (IDs 160-179)
     # =========================================================================
     swimming_stroke_count = "swimming_stroke_count"
+    underwater_depth = "underwater_depth"
 
     # =========================================================================
     # ACTIVITY - Generic (IDs 180-199)
     # =========================================================================
     cadence = "cadence"
     power = "power"
+    speed = "speed"
+
+    # Generic Activity Metrics
+    workout_effort_score = "workout_effort_score"
+    estimated_workout_effort_score = "estimated_workout_effort_score"
 
     # =========================================================================
     # ENVIRONMENTAL (IDs 200-219)
@@ -111,6 +127,19 @@ class SeriesType(str, Enum):
     environmental_sound_reduction = "environmental_sound_reduction"
     time_in_daylight = "time_in_daylight"
     water_temperature = "water_temperature"
+    uv_exposure = "uv_exposure"
+
+    # =========================================================================
+    # OTHER (IDs 220-)
+    # =========================================================================
+
+    electrodermal_activity = "electrodermal_activity"
+    push_count = "push_count"
+    atrial_fibrillation_burden = "atrial_fibrillation_burden"
+    insulin_delivery = "insulin_delivery"
+    number_of_times_fallen = "number_of_times_fallen"
+    number_of_alcoholic_beverages = "number_of_alcoholic_beverages"
+    nike_fuel = "nike_fuel"
 
 
 # =============================================================================
@@ -139,6 +168,11 @@ SERIES_TYPE_DEFINITIONS: list[tuple[int, SeriesType, str]] = [
     (23, SeriesType.blood_pressure_diastolic, "mmHg"),
     (24, SeriesType.respiratory_rate, "brpm"),
     (25, SeriesType.sleeping_breathing_disturbances, "count"),
+    (26, SeriesType.blood_alcohol_content, "mg_dl"),
+    (27, SeriesType.peripheral_perfusion_index, "score"),
+    (28, SeriesType.forced_vital_capacity, "liters"),
+    (29, SeriesType.forced_expiratory_volume_1, "liters"),
+    (30, SeriesType.peak_expiratory_flow_rate, "liters"),
     # -------------------------------------------------------------------------
     # BIOMETRICS - Body Composition (IDs 40-59)
     # -------------------------------------------------------------------------
@@ -148,6 +182,7 @@ SERIES_TYPE_DEFINITIONS: list[tuple[int, SeriesType, str]] = [
     (43, SeriesType.body_mass_index, "kg_m2"),
     (44, SeriesType.lean_body_mass, "kg"),
     (45, SeriesType.body_temperature, "celsius"),
+    (46, SeriesType.waist_circumference, "cm"),
     # -------------------------------------------------------------------------
     # BIOMETRICS - Fitness Metrics (IDs 60-79)
     # -------------------------------------------------------------------------
@@ -192,11 +227,13 @@ SERIES_TYPE_DEFINITIONS: list[tuple[int, SeriesType, str]] = [
     # ACTIVITY - Swimming Metrics (IDs 160-179)
     # -------------------------------------------------------------------------
     (160, SeriesType.swimming_stroke_count, "count"),
+    (161, SeriesType.underwater_depth, "meters"),
     # -------------------------------------------------------------------------
     # ACTIVITY - Generic (IDs 180-199)
     # -------------------------------------------------------------------------
     (180, SeriesType.cadence, "rpm"),
     (181, SeriesType.power, "watts"),
+    (182, SeriesType.speed, "m_per_s"),
     # -------------------------------------------------------------------------
     # ENVIRONMENTAL (IDs 200-219)
     # -------------------------------------------------------------------------
@@ -205,6 +242,17 @@ SERIES_TYPE_DEFINITIONS: list[tuple[int, SeriesType, str]] = [
     (202, SeriesType.environmental_sound_reduction, "dB"),
     (203, SeriesType.time_in_daylight, "minutes"),
     (204, SeriesType.water_temperature, "celsius"),
+    (205, SeriesType.uv_exposure, "count"),
+    # -------------------------------------------------------------------------
+    # OTHER (IDs 220-)
+    # -------------------------------------------------------------------------
+    (220, SeriesType.electrodermal_activity, "count"),
+    (221, SeriesType.push_count, "count"),
+    (222, SeriesType.atrial_fibrillation_burden, "count"),
+    (223, SeriesType.insulin_delivery, "count"),
+    (224, SeriesType.number_of_times_fallen, "count"),
+    (225, SeriesType.number_of_alcoholic_beverages, "count"),
+    (226, SeriesType.nike_fuel, "count"),
 ]
 
 
