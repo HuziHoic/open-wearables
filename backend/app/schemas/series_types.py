@@ -128,6 +128,7 @@ class SeriesType(str, Enum):
     time_in_daylight = "time_in_daylight"
     water_temperature = "water_temperature"
     uv_exposure = "uv_exposure"
+    inhaler_usage = "inhaler_usage"
 
     # =========================================================================
     # OTHER (IDs 220-)
@@ -243,6 +244,7 @@ SERIES_TYPE_DEFINITIONS: list[tuple[int, SeriesType, str]] = [
     (203, SeriesType.time_in_daylight, "minutes"),
     (204, SeriesType.water_temperature, "celsius"),
     (205, SeriesType.uv_exposure, "count"),
+    (206, SeriesType.inhaler_usage, "count"),
     # -------------------------------------------------------------------------
     # OTHER (IDs 220-)
     # -------------------------------------------------------------------------
